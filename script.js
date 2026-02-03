@@ -8,7 +8,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
-            // Close mobile menu if open
             navMenu.classList.remove('active');
         }
     });
@@ -20,8 +19,7 @@ const navMenu = document.getElementById('navMenu');
 
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
-    // Animate hamburger icon
+
     const spans = navToggle.querySelectorAll('span');
     spans.forEach((span, index) => {
         if (navMenu.classList.contains('active')) {
@@ -84,22 +82,20 @@ window.addEventListener('scroll', () => {
 });
 
 // Scroll Animation for Elements
-const scrollElements = document.querySelectorAll('.skill-card, .project-card, .about-highlights, .contact-content');
+const scrollElements = document.querySelectorAll(
+    '.skill-card, .project-card, .about-highlights, .contact-content, .stat-card, .education-card, .cert-card, .hackathon-card'
+);
 
 const elementInView = (el, percentageScroll = 100) => {
     const elementTop = el.getBoundingClientRect().top;
     return (
-        elementTop <= 
-        ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
+        elementTop <=
+        ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll / 100))
     );
 };
 
 const displayScrollElement = (element) => {
     element.classList.add('scroll-animate');
-};
-
-const hideScrollElement = (element) => {
-    element.classList.remove('scroll-animate');
 };
 
 const handleScrollAnimation = () => {
@@ -115,48 +111,12 @@ const handleScrollAnimation = () => {
 
 window.addEventListener('scroll', handleScrollAnimation);
 
-// Skill Progress Animation
-const skillBars = document.querySelectorAll('.skill-progress');
-
-const animateSkillBars = () => {
-    skillBars.forEach(bar => {
-        const barPosition = bar.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight;
-
-        if (barPosition < screenPosition) {
-            const width = bar.style.width;
-            bar.style.width = '0%';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 200);
-        }
-    });
-};
-
-let hasAnimated = false;
-window.addEventListener('scroll', () => {
-    if (!hasAnimated && elementInView(document.querySelector('.skills-section'))) {
-        animateSkillBars();
-        hasAnimated = true;
-    }
-});
-
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
 
-    // Here you would typically send this data to a server
-    // For now, we'll just show a success message
-    
-    // Create success message
     const successMsg = document.createElement('div');
     successMsg.style.cssText = `
         position: fixed;
@@ -179,10 +139,9 @@ contactForm.addEventListener('submit', (e) => {
             </div>
         </div>
     `;
-    
+
     document.body.appendChild(successMsg);
 
-    // Remove message after 5 seconds
     setTimeout(() => {
         successMsg.style.animation = 'slideOut 0.5s ease';
         setTimeout(() => {
@@ -190,7 +149,6 @@ contactForm.addEventListener('submit', (e) => {
         }, 500);
     }, 5000);
 
-    // Reset form
     contactForm.reset();
 });
 
@@ -220,13 +178,13 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Typing Effect for Home Section (Optional Enhancement)
+// Typing Effect for Home Section
 const typingText = document.querySelector('.home-text h2');
 if (typingText) {
     const text = typingText.textContent;
     typingText.textContent = '';
     let i = 0;
-    
+
     setTimeout(() => {
         const typeWriter = () => {
             if (i < text.length) {
@@ -245,7 +203,7 @@ projectCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) scale(1.02)';
     });
-    
+
     card.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) scale(1)';
     });
@@ -256,7 +214,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallax = document.querySelector('.home-section');
     if (parallax) {
-        parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        parallax.style.transform = `translateY(${scrolled * 0.2}px)`;
     }
 });
 
@@ -266,7 +224,6 @@ window.addEventListener('load', () => {
     highlightNavigation();
 });
 
-// Preloader (Optional)
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
