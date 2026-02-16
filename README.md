@@ -50,7 +50,7 @@ A modern, responsive portfolio website showcasing skills, projects, and professi
 
 1. **Contact Details**: Edit the email, phone, and location in the Contact section of `index.html`
 2. **Social Media Links**: Update the href attributes in the social-links section
-3. **Profile Image**: Replace `images/yash-profile.svg` with your real photo (recommended file: `images/yash-profile.jpg`) and update `index.html` accordingly.
+3. **Profile Image**: Replace the image in the `images` folder
 
 ### Adding New Projects
 
