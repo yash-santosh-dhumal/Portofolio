@@ -14,11 +14,14 @@ A modern, responsive portfolio website showcasing skills, projects, and professi
 
 ## Sections
 
-1. **Home**: Professional introduction with profile image
-2. **About**: Educational background and career overview
-3. **Skills**: Technical skills with visual progress indicators
+1. **Home**: Professional introduction with achievements
+2. **About**: Educational background and focus areas
+3. **Skills**: Technical skills grouped by focus
 4. **Projects**: Featured projects with descriptions and tech stack
-5. **Contact**: Contact form and social media links
+5. **Education**: Academic timeline with scores
+6. **Certifications**: Highlighted certificates and dates
+7. **Hackathons**: Participation highlights
+8. **Contact**: Contact form and social media links
 
 ## Technologies Used
 
@@ -30,16 +33,16 @@ A modern, responsive portfolio website showcasing skills, projects, and professi
 
 ## Projects Featured
 
-1. **Medibot** - Healthcare automation system
-2. **AI Learning Path Generator** - Personalized learning tool
-3. **Resume Analyzer** - Resume optimization tool
-4. **Indian States Travels Fare Analysis** - Data visualization dashboard
+1. **Medi-Bot** - End-to-end medical chatbot
+2. **Automated Resume Relevance Check System** - AI scoring system
+3. **AI Learning Path Generator** - Personalized learning tool
 
 ## Technical Skills Highlighted
 
 - MERN Stack (MongoDB, Express.js, React.js, Node.js)
-- General Artificial Intelligence
-- Database Management and Design
+- Next.js and modern web frameworks
+- LangChain, Gemini, Pinecone, and vector databases
+- Data visualization with Power BI
 
 ## Customization Guide
 
@@ -99,9 +102,9 @@ Add a new skill card in the skills section:
         <i class="fab fa-skill-icon"></i>
     </div>
     <h3>Skill Name</h3>
-    <p>Skill description</p>
-    <div class="skill-bar">
-        <div class="skill-progress" style="width: XX%"></div>
+    <div class="chip-group">
+        <span class="chip">Technology 1</span>
+        <span class="chip">Technology 2</span>
     </div>
 </div>
 ```
@@ -137,10 +140,10 @@ Add a new skill card in the skills section:
 
 To deploy this website:
 
-1. **GitHub Pages**: Push to a GitHub repository and enable GitHub Pages
-2. **Netlify**: Drag and drop the folder to Netlify
-3. **Vercel**: Import the project from GitHub
-4. **Traditional Hosting**: Upload all files via FTP
+1. **GitHub Pages**: Push to a GitHub repository, enable GitHub Pages, and use the included workflow in `.github/workflows/pages.yml`.
+2. **Netlify**: Drag and drop the folder to Netlify.
+3. **Vercel**: Import the project from GitHub.
+4. **Traditional Hosting**: Upload all files via FTP.
 
 ## File Structure
 
